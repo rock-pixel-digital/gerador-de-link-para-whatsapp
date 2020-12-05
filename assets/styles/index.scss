@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import '~bootstrap/scss/bootstrap';
+
+$whatsappBackgroundCenter: #1ebda4;
+$whatsappBackgroundBorder: #189481;
+$whatsappGreen: #4FCE5D;
+$whatsappGray: #435A64;
+
+$phoneHeaderBar: #054C44;
+$phoneTopBar: #075E55;
+$phoneBackground: #F0ECE8;
+$phoneMessageBackground: #E2FFC7;
+$phoneMessageReadedText: #889978;
+
+body {
+    background-color: $whatsappGray;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+#generator {
+    width: 100%;
+    margin: auto;
+    padding-top: 100px;
+    overflow: hidden;
+    position: relative;
+    background-color: $whatsappBackgroundCenter;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../../public/img/body-background.png');
+        background-repeat: repeat;
+        background-position: top left;
+        opacity: .1;
+        z-index: 0;
+    }
+
+    .container {
+        max-width: 1920px;
+
+        .generate--content {
+            padding-bottom: 100px;
+
+            .generate--rockpixel {
+                display: block;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 60px;
+                font-weight: bold;
+                line-height: 1;
+                letter-spacing: -.02em;
+                margin-bottom: 30px;
+            }
+
+            .form {
+                margin-bottom: 50px;
+
+                .form--control {
+                    display: block;
+                    position: relative;
+                    border: 1px solid #fff;
+                    border-radius: 4px;
+                    padding: 20px 40px 20px 60px;
+                    margin: 5px 0;
+
+                    i {
+                        width: 60px;
+                        position: absolute;
+                        text-align: center;
+                        font-size: 25px;
+                        left: 0;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                    }
+
+                    label {
+                        display: block;
+                        font-size: 15px;
+                        margin: 0;
+                        line-height: 1;
+                    }
+
+                    input {
+                        width: 100%;
+                        display: block;
+                        background: transparent;
+                        border: none;
+                        font-size: 25px;
+                        color: #ffffff;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::-webkit-input-placeholder,
+                        &::-ms-input-placeholder,
+                        &::placeholder {
+                            color: rgba(255, 255, 255, .5);
+                        }
+                    }
+
+                    &.error {
+                        border-color: red;
+                        background-color: rgba(255, 255, 255, .5);
+
+                        i,
+                        label {
+                            color: red;
+                        }
+
+                        input {
+                            color: rgba(60, 60, 60, 1);
+
+                            &::-webkit-input-placeholder,
+                            &::-ms-input-placeholder,
+                            &::placeholder {
+                                color: rgba(60, 60, 60, .5);
+                            }
+                        }
+                    }
+
+                    &.success {
+                        border-color: $whatsappGreen;
+                        background-color: white;
+
+                        i,
+                        label {
+                            color: $whatsappGreen;
+                        }
+
+                        input {
+                            color: $whatsappGray;
+                            font-size: 18px;
+                            line-height: 1.5;
+                            padding-top: 11px;
+                        }
+                    }
+                }
+
+                p {
+                    display: block;
+                    position: relative;
+                    margin: 30px 0;
+                    padding: 0 0 0 70px;
+                    font-size: 20px;
+
+                    i {
+                        width: 50px;
+                        height: 50px;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        background-color: $phoneTopBar;
+                        color: white;
+                        font-size: 30px;
+                        text-align: center;
+                        line-height: 1.7;
+                        border-radius: 100px;
+                    }
+                }
+
+                button {
+                    border: none;
+                    font-weight: bold;
+                    color: $whatsappGreen;
+                    background-color: #fff;
+                    font-size: 25px;
+                    text-transform: uppercase;
+                    margin: 15px 15px 0 0;
+                    padding: 20px 40px;
+                    line-height: 1;
+                    border-radius: 4px;
+                    transition: all ease .3s;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $whatsappGreen;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+
+        .smartphone {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+
+            .smartphone--content {
+                width: 95%;
+                height: 98%;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                background-color: $phoneBackground;
+                border-radius: 10%;
+                overflow: hidden;
+
+                .smartphone--content--headerbar {
+                    width: 100%;
+                    height: 6%;
+                    background-color: $phoneHeaderBar;
+                }
+
+                .smartphone--content--topbar {
+                    width: 100%;
+                    background-color: $phoneTopBar;
+                    padding: 10px 30px;
+                    display: flex;
+                    align-items: center;
+
+                    .smartphone-content--topbar--icon {
+                        display: inline-block;
+                        border: 5px solid #054c44;
+                        border-radius: 100px;
+                        font-size: 0;
+                        line-height: 1;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        margin: 0 0 0 15px;
+                        display: inline-block;
+                        font-weight: bold;
+                        letter-spacing: initial;
+                    }
+                }
+
+                .smartphone--content--message {
+                    padding: 30px 50px 30px 100px;
+
+                    .smartphone--content--message--text {
+                        display: block;
+                        position: relative;
+                        font-size: 20px;
+                        color: #000;
+                        background-color: $phoneMessageBackground;
+                        padding: 15px 20px;
+                        border-radius: 10px 0 10px 10px;
+                        line-height: 1.4;
+
+                        &:after {
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            right: -20px;
+                            border-style: solid;
+                            border-width: 30px 20px 0 0;
+                            border-color: $phoneMessageBackground transparent transparent transparent;
+                        }
+                    }
+
+                    .smartphone--content--message--readed {
+                        text-align: right;
+                        font-size: 12px;
+                        color: $phoneMessageReadedText;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .smartphone--image {
+                display: block;
+                position: relative;
+                margin: 0;
+                padding: 0;
+                font-size: 0;
+                line-height: 1;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        height: 100vh;
+        overflow: hidden;
+        padding-top: 60px;
+
+        .container {
+            .generate--content {
+                padding-bottom: 40px;
+
+                h1 {
+                    font-size: 40px;
+                    margin-bottom: 20px;
+                }
+
+                .form {
+                    margin-bottom: 40px;
+
+                    .form--control {
+                        padding: 15px 20px 15px 60px;
+
+                        label {
+                            font-size: 14px;
+                        }
+
+                        input {
+                            font-size: 20px;
+                        }
+
+                        &.success {
+                            input {
+                                font-size: 16px;
+                                padding-top: 11px;
+                            }
+                        }
+                    }
+
+                    p {
+                        margin: 20px 0;
+                        padding: 0 0 0 50px;
+                        font-size: 18px;
+
+                        i {
+                            width: 40px;
+                            height: 40px;
+                            font-size: 22px;
+                        }
+                    }
+
+                    button {
+                        font-size: 20px;
+                        margin: 10px 10px 0 0;
+                        padding: 15px 30px;
+                    }
+                }
+            }
+
+            .smartphone {
+                position: relative;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        height:150vh;
+        padding-top: 40px;
+
+        .container {
+            .generate--content {
+                padding-bottom: 40px;
+
+                .generate--rockpixel {
+                    margin-bottom: 10px;
+                }
+
+                h1 {
+                    font-size: 25px;
+                    margin-bottom: 15px;
+                }
+
+                .form {
+                    margin-bottom: 0;
+
+                    .form--control {
+                        padding: 10px 20px 10px 20px;
+                        margin: 5px 0;
+    
+                        i {
+                            display:none;
+                        }
+    
+                        label {
+                            font-size: 13px;
+                            font-weight: bold;
+                        }
+    
+                        input {
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+    
+                        &.success {
+                            input {
+                                font-size: 14px;
+                                padding-top: 11px;
+                            }
+                        }
+                    }
+    
+                    p {
+                        margin: 15px 0;
+                        padding: 0;
+                        font-size: 14px;
+    
+                        i {
+                            width: 40px;
+                            height: 40px;
+                            display:block;
+                            position: relative;
+                            left: initial;
+                            top: initial;
+                            -webkit-transform: initial;
+                            -ms-transform: initial;
+                            transform: initial;
+                            font-size: 20px;
+                            line-height: 2;
+                        }
+                    }
+    
+                    button {
+                        font-size: 16px;
+                        margin: 5px 0;
+                        padding: 10px 20px;
+                    }
+                }
+            }
+
+            .smartphone {
+                position: relative;
+
+                .smartphone--content {
+                    .smartphone--content--topbar {
+                        padding: 6px 15px;
+
+                        .smartphone-content--topbar--icon {
+                            border-width: 3px;
+                        }
+
+                        p {
+                            font-size: 14px;
+                            margin-left: 6px;
+                        }
+                    }
+
+                    .smartphone--content--message {
+                        padding: 20px 30px 20px 50px;
+
+                        .smartphone--content--message--text {
+                            font-size: 13px;
+                            line-height:1.3;
+                            padding: 10px 15px;
+                            border-radius: 5px 0 5px 5px;
+
+                            &:after {
+                                right: -10px;
+                                border-width: 20px 10px 0 0;
+                            }
+                        }
+
+                        .smartphone--content--message--readed {
+                            margin-top:6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#text {
+    background: #ffffff;
+    color: #000000;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .works--text {
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 2;
+        }
+    }
+
+    .works--content {
+        h2 {
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 1;
+            letter-spacing: -.02em;
+            margin-bottom: 15px;
+        }
+
+        ol {
+            margin: 0;
+            padding-left: 20px;
+
+            li {
+                font-size: 16px;
+                margin-bottom: 15px;
+
+                small {
+                    display: block;
+                    font-size: 13px;
+                    color: $whatsappGray;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        .works--text {
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .works--content {
+            margin-top: 60px;
+
+            h2 {
+                font-size: 22px;
+            }
+
+            ol {
+                li {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        .works--text {
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .works--content {
+            margin-top: 40px;
+
+            h2 {
+                font-size: 18px;
+            }
+
+            ol {
+                li {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0 0 10px;
+    text-align: center;
+    background-color: $whatsappGray;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../../public/img/body-background.png');
+        background-repeat: repeat;
+        background-position: top left;
+        opacity: .03;
+        z-index: 0;
+    }
+
+    .footer--rockpixel {
+        margin-top: 15px;
+    }
+
+    a,
+    i {
+        display: inline-block;
+        padding: 6px 15px;
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+        transition: all ease .3s;
+
+        &:hover {
+            text-decoration: none;
+            color: $whatsappBackgroundCenter
+        }
+    }
+
+    i {
+        font-size: 10px;
+    }
+
+    @include media-breakpoint-down(md) {}
+
+    @include media-breakpoint-down(xs) {
+        i {
+            display: none !important;
+        }
+
+        a {
+            display: block;
+        }
+    }
+}
+
+.text {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 100px 0;
+
+    h1,
+    h2,
+    h3 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: $whatsappBackgroundCenter;
+    }
+
+    p {
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    a {
+        color: $whatsappGreen;
+        font-weight: bold;
+    }
+
+    ol,
+    ul {
+        li {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 60px 0;
+
+        h1,
+        h2,
+        h3 {
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        ol,
+        ul {
+            li {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        padding: 40px 0;
+
+        h1,
+        h2,
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        ol,
+        ul {
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "whatsapp-link-generator",
+  "version": "0.1.0",
+  "description": "WhatsApp tool to generate message links easy to be shared",
+  "author": {
+    "name": "Rock Pixel Digital",
+    "email": "contact@rockpixel.digital",
+    "url": "https://rockpixel.digital"
+  },
+  "contributors": [
+    {
+      "name": "Fabricio Gwadera",
+      "email": "fabricio@rockpixel.digital"
+    }
+  ],
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "bootstrap": "^4.5.3",
+    "next": "^10.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-input-mask": "^2.0.4",
+    "react-scripts": "4.0.1",
+    "sass": "^1.29.0",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:rock-pixel/gerador-de-link-para-whatsapp.git"
+  }
+}

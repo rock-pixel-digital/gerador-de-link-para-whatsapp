@@ -132,8 +132,8 @@ export default function WhatsappLinkGenerator() {
                                             </InputMask>
                                         </div>
 
-                                        <div className={`form--control${errorMessage ? ' error' : ''}`}>
-                                            <i className={`fas fa-${errorMessage ? 'exclamation' : 'comment-dots'}`}></i>
+                                        <div className="form--control">
+                                            <i className="fas fa-comment-dots"></i>
                                             <label htmlFor="message" className="form--label">Mensagem</label>
                                             <input type="text" placeholder="Escreva o texto que deseja enviar automaticamente" name="message" className="form--input" onChange={handleMessage} defaultValue={messageValue} />
                                         </div>
